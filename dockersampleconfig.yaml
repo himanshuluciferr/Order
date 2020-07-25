@@ -1,0 +1,33 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orderdeployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Order
+  template:
+    metadata:
+      labels:
+        app: Order
+    spec:
+      containers:
+      - name: menuitemlisting
+        image: truyum1.azurecr.io/value:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: wallpapersan
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: Order
