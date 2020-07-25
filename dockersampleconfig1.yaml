@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 8080
       imagePullSecrets:
-      - name: wallpapersan
+      - name: wallpaperslan
 
 ---
 apiVersion: v1
