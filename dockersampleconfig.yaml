@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: menuitemlisting
-        image: truyum1.azurecr.io/value:latest
+        image: truyum1.azurecr.io/value1:latest
         ports:
         - containerPort: 8080
       imagePullSecrets:
